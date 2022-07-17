@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+:root {
+    --darkCyan: hsl(158, 36%, 37%);
+    --bodyBg: hsl(30, 38%, 92%);
+    --productNameColor: hsl(212, 21%, 14%);
+    --paragraphColor: hsl(228, 12%, 48%);
+    --productDetailsBg: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    background-color: var(--bodyBg);
+    font-family: 'Montserrat', sans-seriff;
+    color: var(--paragraphColor);
+}
+
+.container {
+    background-color: var(--productDetailsBg);
+    width: 40vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.mobile-img {
+    display: none;
+}
+
+.desktop-img {
+    width: 50%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 5%;
+    width: 50%;
+    background-color: var(--productDetailsBg);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    overflow-wrap: normal;
+}
+
+.product {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+
+.product-name {
+    font-family: 'Fraunces', serif;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 230%;
+    color: var(--productNameColor);
+}
+
+.product-texts {
+    line-height: 23px;
+}
+
+.price {
+    font-family: 'Fraunces', serif;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    font-size: 230%;
+    display: inline-block;
+    color: var(--darkCyan);
+}
+
+.old-price {
+    text-decoration: line-through;
+}
+
+.btn {
+    background-color: var(--darkCyan);
+    height: 50px;
+    border-radius: 7px;
+    color: var(--productDetailsBg);
+    text-align: center;
+    line-height: 50px;
+}
+
+.btn:hover {
+    background-color: hsl(157, 34%, 31%);
+    transition: 500ms ease;
+}
+
+.btn:active {
+    background-color: hsl(158, 36%, 22%);
+    transition: 250ms ease;
+}
+
+.attribution { 
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 1200px) { 
+    .container {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        position: absolute;
+        top: 35%;
+        bottom: 35%;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
+    .mobile-img {
+        display: flex;
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .product-details {
+        display: block;
+        width: auto;
+        height: auto;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .attribution {
+        display: none;
+    }
+}
+
+@media (max-width: 612px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 376px) {
+    .container {
+        width: 80%;
+    }
+}
+
